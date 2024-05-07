@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "NES Sim Midterm.sln"
+    "dotnet.defaultSolution": "NES-Sim.sln"
 }
