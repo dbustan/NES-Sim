@@ -15,8 +15,10 @@ public class SendMessagesToPatch : MonoBehaviour
 
     private Scale defaultScale = Scale.AllSemi;
     Scale currentScale;
-    private int defaultOctave1 = 4;
-    private int defaultOctave2 = 4;
+
+    // Get these values from the text next to the sliders
+    [SerializeField] private int defaultOctave1 = 5;
+    [SerializeField] private int defaultOctave2 = 5;
 
     [SerializeField] GameObject octave1TextObj;
     [SerializeField] GameObject octave2TextObj;
