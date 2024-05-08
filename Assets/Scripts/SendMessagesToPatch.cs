@@ -25,6 +25,8 @@ public class SendMessagesToPatch : MonoBehaviour
     [SerializeField] TMP_Text octave1Text;
     TMP_Text octave2Text;
 
+    private bool started = false;
+
     void Start()
     {
         // Singleton
@@ -48,7 +50,11 @@ public class SendMessagesToPatch : MonoBehaviour
 
     public void StartPatch()
     {
-        OSCHandler.Instance.SendMessageToClient("pd", "/unity/start", 1);
+        if (!started)
+        {
+            started = true;
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/start", 1);
+        }   
     }
 
     public void ChangeOctave(int select, int octave)
@@ -85,5 +91,11 @@ public class SendMessagesToPatch : MonoBehaviour
     public void ChangeScale(Scale scale)
     {
         ChangeScale((int)scale);
+    }
+
+    public void ToggleMute(bool mute)
+    {
+        int val = mute ? 0 : 1;  // DSP toggle will be set to 0/false if mute is true, else oppsosite
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/mute", val);
     }
 }

@@ -934,7 +934,7 @@
 #X connect 77 0 59 0;
 #X connect 79 0 13 0;
 #X restore 491 304 pd pulseWave;
-#N canvas 342 150 885 462 oscReceive 1;
+#N canvas 342 150 885 462 oscReceive 0;
 #X obj 55 184 netreceive -u -b;
 #X msg 78 143 listen 0;
 #X text 152 143 stop listening;
